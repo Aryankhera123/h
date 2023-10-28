@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loan EMI Calculator</title>
+    <link rel="stylesheet" href="lcalc.css">
+</head>
+
+<body>
+    <div>
+        <h1>Loan Emi Calculator</h1>
+        <form onsubmit="return false">
+            <label for="LoanAmount">Loan Amount: </label>
+            <input type="text" id="amount"><br><br>
+            <label for="Interestsetrate">Interest Rate: </label>
+            <input type="text" id="rate"><br>
+            <label for="Years">Years to pay: </label>
+            <input type="text" id="years"><br>
+            <input type="submit" value="Calculate"onclick="calculate(amount. value, rate.value, years.value)">
+        </form>
+    </div>
+    <label for="output" id="demo"></label>
+    <script src="app6.js"></script>
+</body>
+
+</html>

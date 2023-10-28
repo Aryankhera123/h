@@ -1,0 +1,874 @@
+Delivered-To: jayeshchand69@gmail.com
+Received: by 2002:ab2:6856:0:b0:1b7:ffa5:fead with SMTP id l22csp1389941lqp;
+        Sat, 22 Apr 2023 05:54:10 -0700 (PDT)
+X-Received: by 2002:a81:700c:0:b0:54b:f8b4:bc8d with SMTP id l12-20020a81700c000000b0054bf8b4bc8dmr4126596ywc.0.1682168049816;
+        Sat, 22 Apr 2023 05:54:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1682168049; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Iric5Z3hnBEjXJw4McHmEC/vUd+6Xa38PYxxS7kHKLOsAbpkwYkgyxbL/rWK2byYXY
+         u/xs/2E5usMTTywliEunl2kFVscSG+0j2h3hwhGwQQzAD2fZAcdZYNE79mPKwHzEDcSp
+         R84gKsgcMHFdWAuOrnTCuDOmws922bGkHPjk99Q0d3Ks8aeN/N+gq6KfOZS52TQygGux
+         cM6KZ+U3nGVFvNMONKolztV3D6QNz9eB2qJkdaIH5+onlOVZhrXvuBx//CfYd5HiUg8l
+         GNMLpsQ5ModuXOwwV9049v5rjKeSnJWsk8kZ8IORsi7j3gGEsDDYnq7MKRfOmu3NajFB
+         qTLA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=0abS2ElmwwGtmcvXOsyrYj9ZY7tBwPEf8zwgwhg2v68=;
+        b=QV0qA8djza2LcL71KAQ4CI2lXc83iQOGpNzWUPSxxtHxAUMZKX4V1xne4doH5JBfEa
+         rQzHKj+2QkTZ8jWElA2U+eWfNNrFrQmVpDADJOI/UEc7nd4drkX2qQ3gTbr+25d8bYkd
+         hgohT0XOpPnUeYcQT2bmZsAoPa48N33zwcKMHp9gSkJ3ycQc7e4gWA1ZHcww74hQpYQS
+         EwYDZMmqrCSNrvttdsnCBHEK0wnSG93WkTt+pKqfPZLRBvqIVg1BSy33p4KDmsjFni9t
+         kQFYNe7gcXcx3uQ2ZITsHBsblJFDeCqTMwF+gVEmRrt61heg0seRT/t/dP+pJAPHPgc0
+         hQjg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b="kJWDZ4l/";
+       spf=pass (google.com: domain of harsh1101joshi@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=harsh1101joshi@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <harsh1101joshi@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p8-20020a81b108000000b00552a657f267sor4136513ywh.179.2023.04.22.05.54.09
+        for <jayeshchand69@gmail.com>
+        (Google Transport Security);
+        Sat, 22 Apr 2023 05:54:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of harsh1101joshi@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b="kJWDZ4l/";
+       spf=pass (google.com: domain of harsh1101joshi@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=harsh1101joshi@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1682168049; x=1684760049;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=0abS2ElmwwGtmcvXOsyrYj9ZY7tBwPEf8zwgwhg2v68=;
+        b=kJWDZ4l/b1J75oq7vegpFDsFVwdMjOKNJcE8oZLROokJmKmC9za8j1L+OjJwUrxWb9
+         t5YCx299EOq96DK1XOXKjBdIDjmHhA9tg95XBDox+v2580a7ZUPwWCVZT+m9/z2n5thb
+         DmKjvTXVlzP1C4LoU9gWRiga3g7xYNiFCD6jysM5TrvVimy4QzCzvzxHBbsLjgw5WhXK
+         sRLqAwrrlZWx6bHD4M+k+KPNlTwHtxF1PE5OJeEDQEPXl2HPNG7qOu6puAOKnWUYLfrH
+         B3NYvZ7kxMnsnvtXusbDx3LJ2EgHG7f8F+NmhD3EpHTVT8zx9n0uJhQrNGjibExt06ce
+         WvmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682168049; x=1684760049;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=0abS2ElmwwGtmcvXOsyrYj9ZY7tBwPEf8zwgwhg2v68=;
+        b=Fhvw9bbCbBgm3Y51lMHAhlFyyvilTwM7ruQSD+vhDt0/NPLonYXTzLEM2V9/RXbhnB
+         cgi+I4hnANh9Af9jq9BGD84oZS8QHpKLDGWjINiikSp1VECuqfVloteVDOe5XW9pfuhA
+         w52BPv7mEEA5TA7HzmNMHs2X3HmY6MQYaSVMVzggL87r2hd5s3Ql8u0mxTvLPGzJt5+/
+         vrgNqmK2+nMAp5KLIqKXyp7vDuhLQzVjurh2Oc3pNgWPfqMRu2+xNJcgvgIY+K520zQj
+         e5su2Qk9C4EIyB/bjru2sg3BM7xKzR2GVGy7fyr7p9LPVAnSq85aFW/On+GWMIfuIYte
+         16sg==
+X-Gm-Message-State: AAQBX9cJhLHAUFQ3CpcusN8tBGoCP1XPoEZSG7N/Hdn6WJtEFBOVcYZG
+	brrZnj/zqceDykRE5o2YwvcsD1oy/C4O4FbUSLDYN8GPHUY=
+X-Google-Smtp-Source: AKy350b0O75uOLsPuJT/FADwF37jQCi/3lcK5OwqOivI2Qhe024XQQwTLNQWe/F9uzAL1PtxXVh3CuIK1/H/MFUmEuE=
+X-Received: by 2002:a81:fd1:0:b0:52e:ff80:3287 with SMTP id
+ 200-20020a810fd1000000b0052eff803287mr4664916ywp.9.1682168049181; Sat, 22 Apr
+ 2023 05:54:09 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAC5fOvYY1nFjFWPejRPGX_qym-Oy-U-k++u4w=ZC2+UjSa4CMQ@mail.gmail.com>
+ <CAC5fOvYQH-kJWJG0vbg6AOkwRCKk8GR_rkdgo-2BA7xEQB995w@mail.gmail.com>
+In-Reply-To: <CAC5fOvYQH-kJWJG0vbg6AOkwRCKk8GR_rkdgo-2BA7xEQB995w@mail.gmail.com>
+From: harsh joshi <harsh1101joshi@gmail.com>
+Date: Sat, 22 Apr 2023 18:23:56 +0530
+Message-ID: <CAC5fOvYW-hEs_HcJL_Q6V8=XYC7Xu5UsY63422c43zimnna_yA@mail.gmail.com>
+Subject: Re:
+To: jayeshchand69@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000062aac05f9ec45a1"
+
+--000000000000062aac05f9ec45a1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head><title>document</title>
+<style>
+nav ul{
+background-color: rgb(0, 0, 0);
+align-items: center;
+display: flex;
+justify-content: space-around;
+}
+nav li{
+list-style: none;
+}
+nav ul a:hover{
+color: aqua;
+}
+html{
+background-image: url(./poke.png);
+}
+.img{
+padding-right: 400px;
+}
+</style>
+</head>
+<body>
+<div class=3D"parent">
+<nav>
+<ul>
+<li><a href=3D"#">home</a></li>
+<li><a href=3D"#">about us</a></li>
+<li><a href=3D"#">contact</a></li>
+<li><a href=3D"#">more</a></li>
+</ul>
+</nav>
+</div>
+<h1 style=3D"margin-left: 400px; color: azure;" >pokemon games</h1>
+<div class=3D"parre2">
+<img src=3D"./helo.png" height=3D"300px" width=3D"300px" alt=3D"">
+</div>
+</body>
+</html>
+
+On Sat, Apr 22, 2023 at 6:23=E2=80=AFPM harsh joshi <harsh1101joshi@gmail.c=
+om>
+wrote:
+
+> <!DOCTYPE html>
+> <html>
+> <head>
+> <title>Nanhi Pari</title>
+> <style>
+> *{
+> margin: 0px;
+> padding: 0px;
+> }
+> .parent{
+> display: flex;
+> text-align: center;
+> justify-content: space-between;
+> }.child2{
+> padding-top: 40px;
+> }
+> .parent1 ul{
+> display: flex;
+> justify-content: space-between;
+> height: 30px;
+> padding-top: 15px;
+> }.parent1{
+> background-color: rgb(69, 183, 58);
+> border-radius: 15px;
+> }.parent1 ul a{
+> text-decoration: none;
+> color: white;
+> }.parent1 li{
+> list-style: none;
+> }.parent1 li a:hover{
+> color: pink;
+> }.parent2{
+> display: flex;
+> height: 40px;
+> width: 50%;
+> background-color: rgb(234, 240, 241);
+> justify-content: space-between;
+> align-items: center;
+> text-align: center;
+> margin-left: 350px;
+> border-radius: 10px;
+> }
+> .child5{
+> background-color: black;
+> width: 150px;
+> height: 30px;
+> border-radius: 10px;
+> text-align: center;
+> justify-content: space-between;
+> }h2{
+> padding-top: 15px;
+> }.child6{
+> display: flex;
+> text-align: center;
+> justify-content: center;
+> }.child7{
+> display: flex;
+> width: 20%;
+> }.parent3{
+> display: flex;
+> justify-content: space-between;
+> align-items: center;
+> background-color: rgb(214, 243, 253);
+> }.child9{
+> width: 50%;
+> }.child8{
+> text-align: center;
+> width: 20%;
+> border: 4px solid rgb(62, 224, 79);
+> border-radius: 10px;
+> height: 250px;
+> }.bg{
+> width:100%;
+> height:1000px;
+> background-repeat: no-repeat;
+> background:linear-gradient(to left,rgba(255, 192, 203,0.7),rgba(0, 0, 0,
+> 0.7)),url(
+> ./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.a=
+vif
+> )
+> }
+> .parent_box{
+> display: flex;
+> justify-content: space-between;
+> }
+> .child{
+> border:2px solid grey;
+> text-align: center;
+> border-radius: 20%;
+> /box-shadow: 10px 15px 2px 10px;/
+>
+> }
+> .parent_box img{
+> border-radius: 50%;
+> padding-bottom: 20px;
+> }
+> .parent_box p{
+> padding-bottom: 20px;
+> }
+>
+>
+> </style>
+> </head>
+> <body>
+> <div class=3D"parent">
+> <div class=3D"child1">
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"190px" width=3D"" alt=3D""></div>
+> <div class=3D"child2">
+> <h1>GAMING ACADEMY PTH </h1><br>
+> <h5>Established in 2023 by JAYESH CHAND</h5><br>
+> <h3>An AICTE Approved Constituent Institute of Uttarakhand Technical
+> University</h3><br>
+> </div>
+> <div class=3D"child3">
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"190px" width=3D"" alt=3D""></div>
+> </div>
+> <div class=3D"parent1">
+> <ul>
+> <li ><a href=3D"#">HOME</a></li>
+> <li><a href=3D"#">ABOUT-US</a></li>
+> <li><a href=3D"#">ACADEMICS</a>
+> <li><a href=3D"#">ADMISSIONS</a></li>
+> <li><a href=3D"#">GOVERNANCE</a></li>
+> <li><a href=3D"#">Contact</a></li>
+> <li><a href=3D"#">T&P cell</a></li>
+> </ul>
+> </div>
+> <div class=3D"parent2" style=3D"height:400px;width:100%">
+> <div class=3D"child5"><h3 style=3D"color: rgb(245, 245, 245);">Latest Not=
+ice</
+> h3></div>
+> <marquee behavior=3D"left" rection=3D"up">
+> <h3>This is the notice for today</h3>
+> <h3>This is the notice for tomaoraw</h3>
+> <h3>This is the notice for yesterday</h3>
+> <h3>This is the notice for monday</h3>
+> <h3>This is the notice for tuesday</h3>
+> </marquee>
+> </div>
+> <div class=3D"bg">
+> </div>
+> <div class=3Dchild6><h1>About the Institute</h1></div>
+> <div class=3D"parent3">
+> <div class=3Dchild7>
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"190px" width=3D"" alt=3D""></div>
+> <div class=3D"child9">
+> <p><b>HAMARA VAHA GAMING KA PROFFESONAL COURSE KARAYA JATA HA</b> to suru
+> karta ha bina kisi harkat ka to hamara vha gaming ki degree milti ha to a=
+j
+> hi join kara aj ham juda ga to kal esport khalaga or million sa chapaga a=
+p
+> log to aj hi join karo to ab kya padh rha ho ma bhi gammer hu mujha gamin=
+g
+> ka alava kuch nahi ata to chala jao abhi bhi dek rha ha ab kya batao yll
+> gaming sikna aya ho ya padhna </p></div>
+> <div class=3D"child8">
+> <h1 style=3D"background-color: aqua;">Registration Form</h1><br>
+> <form>
+>
+> <label for=3D"">Your Name</label>
+> <input type=3D"text"><br><br>
+> <label for=3D"">Mobile No</label>
+> <input type=3D"text"><br><br>
+> <label for=3D"">Email</label>
+> <input type=3D"text"><br><br>
+> <label for=3D"">Address</label>
+> <input type=3D"text"><br><br>
+> <input type=3D"submit"><br><br>
+> </div>
+> </div>
+> <div class=3D"parent_box">
+> <div class=3D"child" id=3D"child1">
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"400px" width=3D"300px" alt=3D"">
+> <p>Harish Mehta</p>
+> <p>rank 150</p>
+>
+> </div>
+> <div class=3D"child" id=3D"child2">
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"400px" width=3D"300px" alt=3D"">
+> <p>Harish Mehta</p>
+> <p>rank 150</p>
+> </div>
+> <div class=3D"child" id=3D"child3">
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"400px" width=3D"300px" alt=3D"">
+> <p>Harish Mehta</p>
+> <p>rank 150</p>
+> </div>
+> <div class=3D"child" id=3D"child4">
+> <img src=3D
+> "./cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5812.=
+avif"
+> height=3D"400px" width=3D"300px" alt=3D"">
+> <p>Harish Mehta</p>
+> <p>rank 150</p>
+> </div>
+>
+> </div>
+> </body>
+> </html>
+>
+> On Sat, Apr 22, 2023 at 6:22=E2=80=AFPM harsh joshi <harsh1101joshi@gmail=
+.com>
+> wrote:
+>
+>> hlo
+>>
+>>
+
+--000000000000062aac05f9ec45a1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div style=3D"color:rgb(255,255,255);background-color:rgb(=
+29,32,36);font-family:&quot;cascadia code&quot;,Menlo,Monaco,&quot;Courier =
+New&quot;,monospace,Menlo,Monaco,&quot;Courier New&quot;,monospace;font-siz=
+e:12px;line-height:18px;white-space:pre"><div>&lt;!<span style=3D"color:rgb=
+(255,128,199)">DOCTYPE</span> <span style=3D"color:rgb(245,150,94)">html</s=
+pan>&gt;</div><div>&lt;<span style=3D"color:rgb(255,128,199)">html</span>&g=
+t;</div><div>    &lt;<span style=3D"color:rgb(255,128,199)">head</span>&gt;=
+&lt;<span style=3D"color:rgb(255,128,199)">title</span>&gt;document&lt;/<sp=
+an style=3D"color:rgb(255,128,199)">title</span>&gt;</div><div>        &lt;=
+<span style=3D"color:rgb(255,128,199)">style</span>&gt;</div><div>         =
+   <span style=3D"color:rgb(255,128,199)">nav</span><span style=3D"color:rg=
+b(0,159,255)"> </span><span style=3D"color:rgb(255,128,199)">ul</span>{</di=
+v><div>                background-color: rgb(<span style=3D"color:rgb(245,1=
+50,94)">0</span>, <span style=3D"color:rgb(245,150,94)">0</span>, <span sty=
+le=3D"color:rgb(245,150,94)">0</span>);</div><div>                align-ite=
+ms: <span style=3D"color:rgb(245,150,94)">center</span>;</div><div>        =
+        display: <span style=3D"color:rgb(245,150,94)">flex</span>;</div><d=
+iv>                justify-content: <span style=3D"color:rgb(245,150,94)">s=
+pace-around</span>;</div><div>            }</div><div>            <span sty=
+le=3D"color:rgb(255,128,199)">nav</span><span style=3D"color:rgb(0,159,255)=
+"> </span><span style=3D"color:rgb(255,128,199)">li</span>{</div><div>     =
+           list-style: <span style=3D"color:rgb(245,150,94)">none</span>;</=
+div><div>            }</div><div>            <span style=3D"color:rgb(255,1=
+28,199)">nav</span><span style=3D"color:rgb(0,159,255)"> </span><span style=
+=3D"color:rgb(255,128,199)">ul</span><span style=3D"color:rgb(0,159,255)"> =
+</span><span style=3D"color:rgb(255,128,199)">a</span>:hover{</div><div>   =
+             color: <span style=3D"color:rgb(245,150,94)">aqua</span>;</div=
+><div>            }</div><div>            <span style=3D"color:rgb(255,128,=
+199)">html</span>{</div><div>                background-image: url(<span st=
+yle=3D"color:rgb(255,128,199);font-style:italic">./poke.png</span>);</div><=
+div>            }</div><div>            <span style=3D"color:rgb(245,150,94=
+)">.img</span>{</div><div>                padding-right: <span style=3D"col=
+or:rgb(245,150,94)">400</span><span style=3D"color:rgb(255,128,199)">px</sp=
+an>;</div><div>            }</div><div>        &lt;/<span style=3D"color:rg=
+b(255,128,199)">style</span>&gt;</div><div>    &lt;/<span style=3D"color:rg=
+b(255,128,199)">head</span>&gt;</div><div>    &lt;<span style=3D"color:rgb(=
+255,128,199)">body</span>&gt;</div><div>        &lt;<span style=3D"color:rg=
+b(255,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">class</spa=
+n>=3D<span style=3D"color:rgb(5,169,85)">&quot;parent&quot;</span>&gt;</div=
+><div>            &lt;<span style=3D"color:rgb(255,128,199)">nav</span>&gt;=
+</div><div>                &lt;<span style=3D"color:rgb(255,128,199)">ul</s=
+pan>&gt;</div><div>                    &lt;<span style=3D"color:rgb(255,128=
+,199)">li</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">a</span> <sp=
+an style=3D"color:rgb(245,150,94)">href</span>=3D<span style=3D"color:rgb(5=
+,169,85)">&quot;#&quot;</span>&gt;home&lt;/<span style=3D"color:rgb(255,128=
+,199)">a</span>&gt;&lt;/<span style=3D"color:rgb(255,128,199)">li</span>&gt=
+;</div><div>                    &lt;<span style=3D"color:rgb(255,128,199)">=
+li</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">a</span> <span styl=
+e=3D"color:rgb(245,150,94)">href</span>=3D<span style=3D"color:rgb(5,169,85=
+)">&quot;#&quot;</span>&gt;about us&lt;/<span style=3D"color:rgb(255,128,19=
+9)">a</span>&gt;&lt;/<span style=3D"color:rgb(255,128,199)">li</span>&gt;</=
+div><div>                    &lt;<span style=3D"color:rgb(255,128,199)">li<=
+/span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">a</span> <span style=
+=3D"color:rgb(245,150,94)">href</span>=3D<span style=3D"color:rgb(5,169,85)=
+">&quot;#&quot;</span>&gt;contact&lt;/<span style=3D"color:rgb(255,128,199)=
+">a</span>&gt;&lt;/<span style=3D"color:rgb(255,128,199)">li</span>&gt;</di=
+v><div>                    &lt;<span style=3D"color:rgb(255,128,199)">li</s=
+pan>&gt;&lt;<span style=3D"color:rgb(255,128,199)">a</span> <span style=3D"=
+color:rgb(245,150,94)">href</span>=3D<span style=3D"color:rgb(5,169,85)">&q=
+uot;#&quot;</span>&gt;more&lt;/<span style=3D"color:rgb(255,128,199)">a</sp=
+an>&gt;&lt;/<span style=3D"color:rgb(255,128,199)">li</span>&gt;</div><div>=
+                &lt;/<span style=3D"color:rgb(255,128,199)">ul</span>&gt;</=
+div><div>            &lt;/<span style=3D"color:rgb(255,128,199)">nav</span>=
+&gt;</div><div>        &lt;/<span style=3D"color:rgb(255,128,199)">div</spa=
+n>&gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,199)">h1</spa=
+n> <span style=3D"color:rgb(245,150,94)">style</span>=3D<span style=3D"colo=
+r:rgb(5,169,85)">&quot;</span><span style=3D"color:rgb(5,169,85)">margin-le=
+ft: 400px; color: azure;&quot;</span> &gt;pokemon games&lt;/<span style=3D"=
+color:rgb(255,128,199)">h1</span>&gt;</div><div>        &lt;<span style=3D"=
+color:rgb(255,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">cl=
+ass</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;parre2&quot;</span>&=
+gt;</div><div>            &lt;<span style=3D"color:rgb(255,128,199)">img</s=
+pan> <span style=3D"color:rgb(245,150,94)">src</span>=3D<span style=3D"colo=
+r:rgb(5,169,85)">&quot;./helo.png&quot;</span> <span style=3D"color:rgb(245=
+,150,94)">height</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;300px&q=
+uot;</span> <span style=3D"color:rgb(245,150,94)">width</span>=3D<span styl=
+e=3D"color:rgb(5,169,85)">&quot;300px&quot;</span> <span style=3D"color:rgb=
+(245,150,94)">alt</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;=
+</span>&gt;</div><div>        &lt;/<span style=3D"color:rgb(255,128,199)">d=
+iv</span>&gt;</div><div>    &lt;/<span style=3D"color:rgb(255,128,199)">bod=
+y</span>&gt;</div><div>&lt;/<span style=3D"color:rgb(255,128,199)">html</sp=
+an>&gt;</div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" cl=
+ass=3D"gmail_attr">On Sat, Apr 22, 2023 at 6:23=E2=80=AFPM harsh joshi &lt;=
+<a href=3D"mailto:harsh1101joshi@gmail.com">harsh1101joshi@gmail.com</a>&gt=
+; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px=
+ 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div di=
+r=3D"ltr"><div style=3D"color:rgb(255,255,255);background-color:rgb(29,32,3=
+6);font-family:&quot;cascadia code&quot;,Menlo,Monaco,&quot;Courier New&quo=
+t;,monospace,Menlo,Monaco,&quot;Courier New&quot;,monospace;font-size:12px;=
+line-height:18px;white-space:pre-wrap"><div>&lt;!<span style=3D"color:rgb(2=
+55,128,199)">DOCTYPE</span> <span style=3D"color:rgb(245,150,94)">html</spa=
+n>&gt;</div><div>&lt;<span style=3D"color:rgb(255,128,199)">html</span>&gt;=
+</div><div>    &lt;<span style=3D"color:rgb(255,128,199)">head</span>&gt;</=
+div><div>        &lt;<span style=3D"color:rgb(255,128,199)">title</span>&gt=
+;Nanhi Pari&lt;/<span style=3D"color:rgb(255,128,199)">title</span>&gt;</di=
+v><div>        &lt;<span style=3D"color:rgb(255,128,199)">style</span>&gt;<=
+/div><div>            <span style=3D"color:rgb(255,128,199)">*</span>{</div=
+><div>                margin: <span style=3D"color:rgb(245,150,94)">0</span=
+><span style=3D"color:rgb(255,128,199)">px</span>;</div><div>              =
+  padding: <span style=3D"color:rgb(245,150,94)">0</span><span style=3D"col=
+or:rgb(255,128,199)">px</span>;</div><div>            }</div><div>         =
+   <span style=3D"color:rgb(245,150,94)">.parent</span>{</div><div>        =
+        display: <span style=3D"color:rgb(245,150,94)">flex</span>;</div><d=
+iv>                text-align: <span style=3D"color:rgb(245,150,94)">center=
+</span>;</div><div>                justify-content: <span style=3D"color:rg=
+b(245,150,94)">space-between</span>;</div><div>            }<span style=3D"=
+color:rgb(245,150,94)">.child2</span>{</div><div>                padding-to=
+p: <span style=3D"color:rgb(245,150,94)">40</span><span style=3D"color:rgb(=
+255,128,199)">px</span>;</div><div>            }</div><div>            <spa=
+n style=3D"color:rgb(245,150,94)">.parent1</span><span style=3D"color:rgb(0=
+,159,255)"> </span><span style=3D"color:rgb(255,128,199)">ul</span>{</div><=
+div>                display: <span style=3D"color:rgb(245,150,94)">flex</sp=
+an>;</div><div>                justify-content: <span style=3D"color:rgb(24=
+5,150,94)">space-between</span>;</div><div>                </div><div>     =
+           height: <span style=3D"color:rgb(245,150,94)">30</span><span sty=
+le=3D"color:rgb(255,128,199)">px</span>;</div><div>                padding-=
+top: <span style=3D"color:rgb(245,150,94)">15</span><span style=3D"color:rg=
+b(255,128,199)">px</span>;</div><div>                </div><div>           =
+ }<span style=3D"color:rgb(245,150,94)">.parent1</span>{</div><div>        =
+        background-color: rgb(<span style=3D"color:rgb(245,150,94)">69</spa=
+n>, <span style=3D"color:rgb(245,150,94)">183</span>, <span style=3D"color:=
+rgb(245,150,94)">58</span>);</div><div>                border-radius: <span=
+ style=3D"color:rgb(245,150,94)">15</span><span style=3D"color:rgb(255,128,=
+199)">px</span>;</div><div>              </div><div>            }<span styl=
+e=3D"color:rgb(245,150,94)">.parent1</span><span style=3D"color:rgb(0,159,2=
+55)"> </span><span style=3D"color:rgb(255,128,199)">ul</span><span style=3D=
+"color:rgb(0,159,255)"> </span><span style=3D"color:rgb(255,128,199)">a</sp=
+an>{</div><div>                text-decoration: <span style=3D"color:rgb(24=
+5,150,94)">none</span>;</div><div>                color: <span style=3D"col=
+or:rgb(245,150,94)">white</span>;</div><div>               </div><div>     =
+       }<span style=3D"color:rgb(245,150,94)">.parent1</span><span style=3D=
+"color:rgb(0,159,255)"> </span><span style=3D"color:rgb(255,128,199)">li</s=
+pan>{</div><div>                list-style: <span style=3D"color:rgb(245,15=
+0,94)">none</span>;</div><div>            }<span style=3D"color:rgb(245,150=
+,94)">.parent1</span><span style=3D"color:rgb(0,159,255)"> </span><span sty=
+le=3D"color:rgb(255,128,199)">li</span><span style=3D"color:rgb(0,159,255)"=
+> </span><span style=3D"color:rgb(255,128,199)">a</span>:hover{</div><div> =
+               color: pink;</div><div>            }<span style=3D"color:rgb=
+(245,150,94)">.parent2</span>{</div><div>                display: <span sty=
+le=3D"color:rgb(245,150,94)">flex</span>;</div><div>                height:=
+ <span style=3D"color:rgb(245,150,94)">40</span><span style=3D"color:rgb(25=
+5,128,199)">px</span>;</div><div>                width: <span style=3D"colo=
+r:rgb(245,150,94)">50</span><span style=3D"color:rgb(255,128,199)">%</span>=
+;</div><div>                background-color: rgb(<span style=3D"color:rgb(=
+245,150,94)">234</span>, <span style=3D"color:rgb(245,150,94)">240</span>, =
+<span style=3D"color:rgb(245,150,94)">241</span>);</div><div>              =
+  justify-content: <span style=3D"color:rgb(245,150,94)">space-between</spa=
+n>;</div><div>                align-items: <span style=3D"color:rgb(245,150=
+,94)">center</span>;</div><div>                text-align: <span style=3D"c=
+olor:rgb(245,150,94)">center</span>;</div><div>                margin-left:=
+ <span style=3D"color:rgb(245,150,94)">350</span><span style=3D"color:rgb(2=
+55,128,199)">px</span>;</div><div>                border-radius: <span styl=
+e=3D"color:rgb(245,150,94)">10</span><span style=3D"color:rgb(255,128,199)"=
+>px</span>;</div><div>                </div><div>            }</div><div>  =
+          <span style=3D"color:rgb(245,150,94)">.child5</span>{</div><div> =
+               background-color: <span style=3D"color:rgb(245,150,94)">blac=
+k</span>;</div><div>                width: <span style=3D"color:rgb(245,150=
+,94)">150</span><span style=3D"color:rgb(255,128,199)">px</span>;</div><div=
+>                height: <span style=3D"color:rgb(245,150,94)">30</span><sp=
+an style=3D"color:rgb(255,128,199)">px</span>;</div><div>                bo=
+rder-radius: <span style=3D"color:rgb(245,150,94)">10</span><span style=3D"=
+color:rgb(255,128,199)">px</span>;</div><div>                text-align: <s=
+pan style=3D"color:rgb(245,150,94)">center</span>;</div><div>              =
+  justify-content: <span style=3D"color:rgb(245,150,94)">space-between</spa=
+n>;</div><div>                </div><div>            }<span style=3D"color:=
+rgb(255,128,199)">h2</span>{</div><div>                padding-top: <span s=
+tyle=3D"color:rgb(245,150,94)">15</span><span style=3D"color:rgb(255,128,19=
+9)">px</span>;</div><div>            }<span style=3D"color:rgb(245,150,94)"=
+>.child6</span>{</div><div>                display: <span style=3D"color:rg=
+b(245,150,94)">flex</span>;</div><div>                text-align: <span sty=
+le=3D"color:rgb(245,150,94)">center</span>;</div><div>                justi=
+fy-content: <span style=3D"color:rgb(245,150,94)">center</span>;</div><div>=
+            }<span style=3D"color:rgb(245,150,94)">.child7</span>{</div><di=
+v>                display: <span style=3D"color:rgb(245,150,94)">flex</span=
+>;</div><div>                width: <span style=3D"color:rgb(245,150,94)">2=
+0</span><span style=3D"color:rgb(255,128,199)">%</span>;</div><div>        =
+    }<span style=3D"color:rgb(245,150,94)">.parent3</span>{</div><div>     =
+           display: <span style=3D"color:rgb(245,150,94)">flex</span>;</div=
+><div>                justify-content: <span style=3D"color:rgb(245,150,94)=
+">space-between</span>;</div><div>                align-items: <span style=
+=3D"color:rgb(245,150,94)">center</span>;</div><div>                backgro=
+und-color: rgb(<span style=3D"color:rgb(245,150,94)">214</span>, <span styl=
+e=3D"color:rgb(245,150,94)">243</span>, <span style=3D"color:rgb(245,150,94=
+)">253</span>);</div><div>            }<span style=3D"color:rgb(245,150,94)=
+">.child9</span>{</div><div>                width: <span style=3D"color:rgb=
+(245,150,94)">50</span><span style=3D"color:rgb(255,128,199)">%</span>;</di=
+v><div>            }<span style=3D"color:rgb(245,150,94)">.child8</span>{</=
+div><div>                text-align: <span style=3D"color:rgb(245,150,94)">=
+center</span>;</div><div>                width: <span style=3D"color:rgb(24=
+5,150,94)">20</span><span style=3D"color:rgb(255,128,199)">%</span>;</div><=
+div>                border: <span style=3D"color:rgb(245,150,94)">4</span><=
+span style=3D"color:rgb(255,128,199)">px</span> <span style=3D"color:rgb(24=
+5,150,94)">solid</span> rgb(<span style=3D"color:rgb(245,150,94)">62</span>=
+, <span style=3D"color:rgb(245,150,94)">224</span>, <span style=3D"color:rg=
+b(245,150,94)">79</span>);</div><div>                border-radius: <span s=
+tyle=3D"color:rgb(245,150,94)">10</span><span style=3D"color:rgb(255,128,19=
+9)">px</span>;</div><div>                height: <span style=3D"color:rgb(2=
+45,150,94)">250</span><span style=3D"color:rgb(255,128,199)">px</span>;</di=
+v><div>            }<span style=3D"color:rgb(245,150,94)">.bg</span>{</div>=
+<div>                width:<span style=3D"color:rgb(245,150,94)">100</span>=
+<span style=3D"color:rgb(255,128,199)">%</span>;</div><div>                =
+height:<span style=3D"color:rgb(245,150,94)">1000</span><span style=3D"colo=
+r:rgb(255,128,199)">px</span>;</div><div>                background-repeat:=
+ <span style=3D"color:rgb(245,150,94)">no-repeat</span>;</div><div>        =
+        background:linear-gradient(to <span style=3D"color:rgb(245,150,94)"=
+>left</span>,rgba(<span style=3D"color:rgb(245,150,94)">255</span>, <span s=
+tyle=3D"color:rgb(245,150,94)">192</span>, <span style=3D"color:rgb(245,150=
+,94)">203</span>,<span style=3D"color:rgb(245,150,94)">0.7</span>),rgba(<sp=
+an style=3D"color:rgb(245,150,94)">0</span>, <span style=3D"color:rgb(245,1=
+50,94)">0</span>, <span style=3D"color:rgb(245,150,94)">0</span>,<span styl=
+e=3D"color:rgb(245,150,94)">0.7</span>)),url(<span style=3D"color:rgb(255,1=
+28,199);font-style:italic">./cyberpunk-gaming-controller-gamepad-joystick-i=
+llustration_691560-5812.avif</span>)</div><div>            }</div><div>    =
+        <span style=3D"color:rgb(245,150,94)">.parent_box</span>{</div><div=
+>                display: <span style=3D"color:rgb(245,150,94)">flex</span>=
+;</div><div>                justify-content: <span style=3D"color:rgb(245,1=
+50,94)">space-between</span>;</div><div>                </div><div>        =
+    }</div><div>            <span style=3D"color:rgb(245,150,94)">.child</s=
+pan>{</div><div>                border:<span style=3D"color:rgb(245,150,94)=
+">2</span><span style=3D"color:rgb(255,128,199)">px</span> <span style=3D"c=
+olor:rgb(245,150,94)">solid</span> grey;</div><div>                text-ali=
+gn: <span style=3D"color:rgb(245,150,94)">center</span>;</div><div>        =
+        border-radius: <span style=3D"color:rgb(245,150,94)">20</span><span=
+ style=3D"color:rgb(255,128,199)">%</span>;</div><div>                /box-=
+shadow: <span style=3D"color:rgb(245,150,94)">10</span><span style=3D"color=
+:rgb(255,128,199)">px</span> <span style=3D"color:rgb(245,150,94)">15</span=
+><span style=3D"color:rgb(255,128,199)">px</span> <span style=3D"color:rgb(=
+245,150,94)">2</span><span style=3D"color:rgb(255,128,199)">px</span> <span=
+ style=3D"color:rgb(245,150,94)">10</span><span style=3D"color:rgb(255,128,=
+199)">px</span>;/</div><br><div>            }</div><div>            <span s=
+tyle=3D"color:rgb(245,150,94)">.parent_box</span><span style=3D"color:rgb(0=
+,159,255)"> </span><span style=3D"color:rgb(255,128,199)">img</span>{</div>=
+<div>                border-radius: <span style=3D"color:rgb(245,150,94)">5=
+0</span><span style=3D"color:rgb(255,128,199)">%</span>;</div><div>        =
+        padding-bottom: <span style=3D"color:rgb(245,150,94)">20</span><spa=
+n style=3D"color:rgb(255,128,199)">px</span>;</div><div>            }</div>=
+<div>            <span style=3D"color:rgb(245,150,94)">.parent_box</span><s=
+pan style=3D"color:rgb(0,159,255)"> </span><span style=3D"color:rgb(255,128=
+,199)">p</span>{</div><div>                padding-bottom: <span style=3D"c=
+olor:rgb(245,150,94)">20</span><span style=3D"color:rgb(255,128,199)">px</s=
+pan>;</div><div>            }</div><div>            </div><br><br><div>    =
+    &lt;/<span style=3D"color:rgb(255,128,199)">style</span>&gt;</div><div>=
+    &lt;/<span style=3D"color:rgb(255,128,199)">head</span>&gt;</div><div> =
+   &lt;<span style=3D"color:rgb(255,128,199)">body</span>&gt;</div><div>   =
+     &lt;<span style=3D"color:rgb(255,128,199)">div</span> <span style=3D"c=
+olor:rgb(245,150,94)">class</span>=3D<span style=3D"color:rgb(5,169,85)">&q=
+uot;parent&quot;</span>&gt;</div><div>            &lt;<span style=3D"color:=
+rgb(255,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">class</s=
+pan>=3D<span style=3D"color:rgb(5,169,85)">&quot;child1&quot;</span>&gt;</d=
+iv><div>            &lt;<span style=3D"color:rgb(255,128,199)">img</span> <=
+span style=3D"color:rgb(245,150,94)">src</span>=3D<span style=3D"color:rgb(=
+5,169,85)">&quot;./cyberpunk-gaming-controller-gamepad-joystick-illustratio=
+n_691560-5812.avif&quot;</span> <span style=3D"color:rgb(245,150,94)">heigh=
+t</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;190px&quot;</span> <sp=
+an style=3D"color:rgb(245,150,94)">width</span>=3D<span style=3D"color:rgb(=
+5,169,85)">&quot;&quot;</span> <span style=3D"color:rgb(245,150,94)">alt</s=
+pan>=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;</span>&gt;&lt;/<spa=
+n style=3D"color:rgb(255,128,199)">div</span>&gt;</div><div>            &lt=
+;<span style=3D"color:rgb(255,128,199)">div</span> <span style=3D"color:rgb=
+(245,150,94)">class</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;chil=
+d2&quot;</span>&gt;</div><div>            &lt;<span style=3D"color:rgb(255,=
+128,199)">h1</span>&gt;GAMING ACADEMY PTH &lt;/<span style=3D"color:rgb(255=
+,128,199)">h1</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</span=
+>&gt;</div><div>            &lt;<span style=3D"color:rgb(255,128,199)">h5</=
+span>&gt;Established in 2023 by JAYESH CHAND&lt;/<span style=3D"color:rgb(2=
+55,128,199)">h5</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</sp=
+an>&gt;</div><div>            &lt;<span style=3D"color:rgb(255,128,199)">h3=
+</span>&gt;An AICTE Approved Constituent Institute of Uttarakhand Technical=
+ University&lt;/<span style=3D"color:rgb(255,128,199)">h3</span>&gt;&lt;<sp=
+an style=3D"color:rgb(255,128,199)">br</span>&gt;</div><div>            &lt=
+;/<span style=3D"color:rgb(255,128,199)">div</span>&gt;</div><div>         =
+   &lt;<span style=3D"color:rgb(255,128,199)">div</span> <span style=3D"col=
+or:rgb(245,150,94)">class</span>=3D<span style=3D"color:rgb(5,169,85)">&quo=
+t;child3&quot;</span>&gt;</div><div>            &lt;<span style=3D"color:rg=
+b(255,128,199)">img</span> <span style=3D"color:rgb(245,150,94)">src</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;./cyberpunk-gaming-controller-=
+gamepad-joystick-illustration_691560-5812.avif&quot;</span> <span style=3D"=
+color:rgb(245,150,94)">height</span>=3D<span style=3D"color:rgb(5,169,85)">=
+&quot;190px&quot;</span> <span style=3D"color:rgb(245,150,94)">width</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;</span> <span style=3D"c=
+olor:rgb(245,150,94)">alt</span>=3D<span style=3D"color:rgb(5,169,85)">&quo=
+t;&quot;</span>&gt;&lt;/<span style=3D"color:rgb(255,128,199)">div</span>&g=
+t;</div><div>        &lt;/<span style=3D"color:rgb(255,128,199)">div</span>=
+&gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,199)">div</span=
+> <span style=3D"color:rgb(245,150,94)">class</span>=3D<span style=3D"color=
+:rgb(5,169,85)">&quot;parent1&quot;</span>&gt;</div><div>            &lt;<s=
+pan style=3D"color:rgb(255,128,199)">ul</span>&gt;</div><div>              =
+  &lt;<span style=3D"color:rgb(255,128,199)">li</span> &gt;&lt;<span style=
+=3D"color:rgb(255,128,199)">a</span> <span style=3D"color:rgb(245,150,94)">=
+href</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;H=
+OME&lt;/<span style=3D"color:rgb(255,128,199)">a</span>&gt;&lt;/<span style=
+=3D"color:rgb(255,128,199)">li</span>&gt;</div><div>                &lt;<sp=
+an style=3D"color:rgb(255,128,199)">li</span>&gt;&lt;<span style=3D"color:r=
+gb(255,128,199)">a</span> <span style=3D"color:rgb(245,150,94)">href</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;ABOUT-US&lt;=
+/<span style=3D"color:rgb(255,128,199)">a</span>&gt;&lt;/<span style=3D"col=
+or:rgb(255,128,199)">li</span>&gt;</div><div>                &lt;<span styl=
+e=3D"color:rgb(255,128,199)">li</span>&gt;&lt;<span style=3D"color:rgb(255,=
+128,199)">a</span> <span style=3D"color:rgb(245,150,94)">href</span>=3D<spa=
+n style=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;ACADEMICS&lt;/<span=
+ style=3D"color:rgb(255,128,199)">a</span>&gt;</div><div>                &l=
+t;<span style=3D"color:rgb(255,128,199)">li</span>&gt;&lt;<span style=3D"co=
+lor:rgb(255,128,199)">a</span> <span style=3D"color:rgb(245,150,94)">href</=
+span>=3D<span style=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;ADMISSI=
+ONS&lt;/<span style=3D"color:rgb(255,128,199)">a</span>&gt;&lt;/<span style=
+=3D"color:rgb(255,128,199)">li</span>&gt;</div><div>                &lt;<sp=
+an style=3D"color:rgb(255,128,199)">li</span>&gt;&lt;<span style=3D"color:r=
+gb(255,128,199)">a</span> <span style=3D"color:rgb(245,150,94)">href</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;GOVERNANCE&l=
+t;/<span style=3D"color:rgb(255,128,199)">a</span>&gt;&lt;/<span style=3D"c=
+olor:rgb(255,128,199)">li</span>&gt;</div><div>                &lt;<span st=
+yle=3D"color:rgb(255,128,199)">li</span>&gt;&lt;<span style=3D"color:rgb(25=
+5,128,199)">a</span> <span style=3D"color:rgb(245,150,94)">href</span>=3D<s=
+pan style=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;Contact&lt;/<span=
+ style=3D"color:rgb(255,128,199)">a</span>&gt;&lt;/<span style=3D"color:rgb=
+(255,128,199)">li</span>&gt;</div><div>                &lt;<span style=3D"c=
+olor:rgb(255,128,199)">li</span>&gt;&lt;<span style=3D"color:rgb(255,128,19=
+9)">a</span> <span style=3D"color:rgb(245,150,94)">href</span>=3D<span styl=
+e=3D"color:rgb(5,169,85)">&quot;#&quot;</span>&gt;T&amp;P cell&lt;/<span st=
+yle=3D"color:rgb(255,128,199)">a</span>&gt;&lt;/<span style=3D"color:rgb(25=
+5,128,199)">li</span>&gt;</div><div>            &lt;/<span style=3D"color:r=
+gb(255,128,199)">ul</span>&gt;</div><div>    &lt;/<span style=3D"color:rgb(=
+255,128,199)">div</span>&gt;</div><div>    &lt;<span style=3D"color:rgb(255=
+,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">class</span>=3D=
+<span style=3D"color:rgb(5,169,85)">&quot;parent2&quot;</span> <span style=
+=3D"color:rgb(245,150,94)">style</span>=3D<span style=3D"color:rgb(5,169,85=
+)">&quot;</span><span style=3D"color:rgb(5,169,85)">height:400px;width:100%=
+&quot;</span>&gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,19=
+9)">div</span> <span style=3D"color:rgb(245,150,94)">class</span>=3D<span s=
+tyle=3D"color:rgb(5,169,85)">&quot;child5&quot;</span>&gt;&lt;<span style=
+=3D"color:rgb(255,128,199)">h3</span> <span style=3D"color:rgb(245,150,94)"=
+>style</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;</span><span styl=
+e=3D"color:rgb(5,169,85)">color: rgb(245, 245, 245);&quot;</span>&gt;Latest=
+ Notice&lt;/<span style=3D"color:rgb(255,128,199)">h3</span>&gt;&lt;/<span =
+style=3D"color:rgb(255,128,199)">div</span>&gt;</div><div>       &lt;<span =
+style=3D"color:rgb(255,128,199)">marquee</span> <span style=3D"color:rgb(24=
+5,150,94)">behavior</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;left=
+&quot;</span> <span style=3D"color:rgb(245,150,94)">rection</span>=3D<span =
+style=3D"color:rgb(5,169,85)">&quot;up&quot;</span>&gt;</div><div>        &=
+lt;<span style=3D"color:rgb(255,128,199)">h3</span>&gt;This is the notice f=
+or today&lt;/<span style=3D"color:rgb(255,128,199)">h3</span>&gt;</div><div=
+>        &lt;<span style=3D"color:rgb(255,128,199)">h3</span>&gt;This is th=
+e notice for tomaoraw&lt;/<span style=3D"color:rgb(255,128,199)">h3</span>&=
+gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,199)">h3</span>&=
+gt;This is the notice for yesterday&lt;/<span style=3D"color:rgb(255,128,19=
+9)">h3</span>&gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,19=
+9)">h3</span>&gt;This is the notice for monday&lt;/<span style=3D"color:rgb=
+(255,128,199)">h3</span>&gt;</div><div>        &lt;<span style=3D"color:rgb=
+(255,128,199)">h3</span>&gt;This is the notice for tuesday&lt;/<span style=
+=3D"color:rgb(255,128,199)">h3</span>&gt;</div><div>    &lt;/<span style=3D=
+"color:rgb(255,128,199)">marquee</span>&gt;</div><div>       &lt;/<span sty=
+le=3D"color:rgb(255,128,199)">div</span>&gt;</div><div>       &lt;<span sty=
+le=3D"color:rgb(255,128,199)">div</span> <span style=3D"color:rgb(245,150,9=
+4)">class</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;bg&quot;</span=
+>&gt;</div><div>       </div><div>       &lt;/<span style=3D"color:rgb(255,=
+128,199)">div</span>&gt;</div><div>    </div><div>    &lt;<span style=3D"co=
+lor:rgb(255,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">clas=
+s</span>=3D<span style=3D"color:rgb(5,169,85)">child6</span>&gt;&lt;<span s=
+tyle=3D"color:rgb(255,128,199)">h1</span>&gt;About the Institute&lt;/<span =
+style=3D"color:rgb(255,128,199)">h1</span>&gt;&lt;/<span style=3D"color:rgb=
+(255,128,199)">div</span>&gt;</div><div>    &lt;<span style=3D"color:rgb(25=
+5,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">class</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;parent3&quot;</span>&gt;</div>=
+<div>        </div><div>        &lt;<span style=3D"color:rgb(255,128,199)">=
+div</span> <span style=3D"color:rgb(245,150,94)">class</span>=3D<span style=
+=3D"color:rgb(5,169,85)">child7</span>&gt;</div><div>        &lt;<span styl=
+e=3D"color:rgb(255,128,199)">img</span> <span style=3D"color:rgb(245,150,94=
+)">src</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;./cyberpunk-gamin=
+g-controller-gamepad-joystick-illustration_691560-5812.avif&quot;</span> <s=
+pan style=3D"color:rgb(245,150,94)">height</span>=3D<span style=3D"color:rg=
+b(5,169,85)">&quot;190px&quot;</span> <span style=3D"color:rgb(245,150,94)"=
+>width</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;</span> <sp=
+an style=3D"color:rgb(245,150,94)">alt</span>=3D<span style=3D"color:rgb(5,=
+169,85)">&quot;&quot;</span>&gt;&lt;/<span style=3D"color:rgb(255,128,199)"=
+>div</span>&gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,199)=
+">div</span> <span style=3D"color:rgb(245,150,94)">class</span>=3D<span sty=
+le=3D"color:rgb(5,169,85)">&quot;child9&quot;</span>&gt;</div><div>        =
+&lt;<span style=3D"color:rgb(255,128,199)">p</span>&gt;&lt;<span style=3D"c=
+olor:rgb(255,128,199)">b</span>&gt;HAMARA VAHA GAMING KA PROFFESONAL COURSE=
+ KARAYA JATA HA&lt;/<span style=3D"color:rgb(255,128,199)">b</span>&gt; to =
+suru karta ha bina kisi harkat ka to hamara vha gaming ki degree milti ha t=
+o aj hi join kara aj ham juda ga to kal esport khalaga or million sa chapag=
+a ap log to aj hi join karo to ab kya padh rha ho ma bhi gammer hu mujha ga=
+ming ka alava kuch nahi ata to chala jao                                   =
+           abhi bhi dek rha ha ab kya batao yll gaming sikna aya ho ya padh=
+na                                &lt;/<span style=3D"color:rgb(255,128,199=
+)">p</span>&gt;&lt;/<span style=3D"color:rgb(255,128,199)">div</span>&gt;</=
+div><div>        &lt;<span style=3D"color:rgb(255,128,199)">div</span> <spa=
+n style=3D"color:rgb(245,150,94)">class</span>=3D<span style=3D"color:rgb(5=
+,169,85)">&quot;child8&quot;</span>&gt;</div><div>         &lt;<span style=
+=3D"color:rgb(255,128,199)">h1</span> <span style=3D"color:rgb(245,150,94)"=
+>style</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;</span><span styl=
+e=3D"color:rgb(5,169,85)">background-color: aqua;&quot;</span>&gt;Registrat=
+ion Form&lt;/<span style=3D"color:rgb(255,128,199)">h1</span>&gt;&lt;<span =
+style=3D"color:rgb(255,128,199)">br</span>&gt;</div><div>            &lt;<s=
+pan style=3D"color:rgb(255,128,199)">form</span>&gt;</div><br><div>        =
+    &lt;<span style=3D"color:rgb(255,128,199)">label</span> <span style=3D"=
+color:rgb(245,150,94)">for</span>=3D<span style=3D"color:rgb(5,169,85)">&qu=
+ot;&quot;</span>&gt;Your Name&lt;/<span style=3D"color:rgb(255,128,199)">la=
+bel</span>&gt;</div><div>            &lt;<span style=3D"color:rgb(255,128,1=
+99)">input</span> <span style=3D"color:rgb(245,150,94)">type</span>=3D<span=
+ style=3D"color:rgb(5,169,85)">&quot;text&quot;</span>&gt;&lt;<span style=
+=3D"color:rgb(255,128,199)">br</span>&gt;&lt;<span style=3D"color:rgb(255,1=
+28,199)">br</span>&gt;</div><div>            &lt;<span style=3D"color:rgb(2=
+55,128,199)">label</span> <span style=3D"color:rgb(245,150,94)">for</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;</span>&gt;Mobile No&lt;=
+/<span style=3D"color:rgb(255,128,199)">label</span>&gt;</div><div>        =
+    &lt;<span style=3D"color:rgb(255,128,199)">input</span> <span style=3D"=
+color:rgb(245,150,94)">type</span>=3D<span style=3D"color:rgb(5,169,85)">&q=
+uot;text&quot;</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</spa=
+n>&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</span>&gt;</div><div>  =
+          &lt;<span style=3D"color:rgb(255,128,199)">label</span> <span sty=
+le=3D"color:rgb(245,150,94)">for</span>=3D<span style=3D"color:rgb(5,169,85=
+)">&quot;&quot;</span>&gt;Email&lt;/<span style=3D"color:rgb(255,128,199)">=
+label</span>&gt;</div><div>            &lt;<span style=3D"color:rgb(255,128=
+,199)">input</span> <span style=3D"color:rgb(245,150,94)">type</span>=3D<sp=
+an style=3D"color:rgb(5,169,85)">&quot;text&quot;</span>&gt;&lt;<span style=
+=3D"color:rgb(255,128,199)">br</span>&gt;&lt;<span style=3D"color:rgb(255,1=
+28,199)">br</span>&gt;</div><div>            &lt;<span style=3D"color:rgb(2=
+55,128,199)">label</span> <span style=3D"color:rgb(245,150,94)">for</span>=
+=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;</span>&gt;Address&lt;/<=
+span style=3D"color:rgb(255,128,199)">label</span>&gt;</div><div>          =
+  &lt;<span style=3D"color:rgb(255,128,199)">input</span> <span style=3D"co=
+lor:rgb(245,150,94)">type</span>=3D<span style=3D"color:rgb(5,169,85)">&quo=
+t;text&quot;</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</span>=
+&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</span>&gt;</div><div>    =
+        &lt;<span style=3D"color:rgb(255,128,199)">input</span> <span style=
+=3D"color:rgb(245,150,94)">type</span>=3D<span style=3D"color:rgb(5,169,85)=
+">&quot;submit&quot;</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">b=
+r</span>&gt;&lt;<span style=3D"color:rgb(255,128,199)">br</span>&gt;</div><=
+div>            </div><div>            &lt;/<span style=3D"color:rgb(255,12=
+8,199)">div</span>&gt;</div><div>    &lt;/<span style=3D"color:rgb(255,128,=
+199)">div</span>&gt;</div><div>    &lt;<span style=3D"color:rgb(255,128,199=
+)">div</span> <span style=3D"color:rgb(245,150,94)">class</span>=3D<span st=
+yle=3D"color:rgb(5,169,85)">&quot;parent_box&quot;</span>&gt;</div><div>   =
+     &lt;<span style=3D"color:rgb(255,128,199)">div</span> <span style=3D"c=
+olor:rgb(245,150,94)">class</span>=3D<span style=3D"color:rgb(5,169,85)">&q=
+uot;child&quot;</span> <span style=3D"color:rgb(245,150,94)">id</span>=3D<s=
+pan style=3D"color:rgb(5,169,85)">&quot;child1&quot;</span>&gt;</div><div> =
+                       &lt;<span style=3D"color:rgb(255,128,199)">img</span=
+> <span style=3D"color:rgb(245,150,94)">src</span>=3D<span style=3D"color:r=
+gb(5,169,85)">&quot;./cyberpunk-gaming-controller-gamepad-joystick-illustra=
+tion_691560-5812.avif&quot;</span> <span style=3D"color:rgb(245,150,94)">he=
+ight</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;400px&quot;</span> =
+<span style=3D"color:rgb(245,150,94)">width</span>=3D<span style=3D"color:r=
+gb(5,169,85)">&quot;300px&quot;</span> <span style=3D"color:rgb(245,150,94)=
+">alt</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;&quot;</span>&gt;<=
+/div><div>                        &lt;<span style=3D"color:rgb(255,128,199)=
+">p</span>&gt;Harish Mehta&lt;/<span style=3D"color:rgb(255,128,199)">p</sp=
+an>&gt;</div><div>                        &lt;<span style=3D"color:rgb(255,=
+128,199)">p</span>&gt;rank 150&lt;/<span style=3D"color:rgb(255,128,199)">p=
+</span>&gt;</div><br><div>        &lt;/<span style=3D"color:rgb(255,128,199=
+)">div</span>&gt;</div><div>        &lt;<span style=3D"color:rgb(255,128,19=
+9)">div</span> <span style=3D"color:rgb(245,150,94)">class</span>=3D<span s=
+tyle=3D"color:rgb(5,169,85)">&quot;child&quot;</span> <span style=3D"color:=
+rgb(245,150,94)">id</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;chil=
+d2&quot;</span>&gt;</div><div>                    &lt;<span style=3D"color:=
+rgb(255,128,199)">img</span> <span style=3D"color:rgb(245,150,94)">src</spa=
+n>=3D<span style=3D"color:rgb(5,169,85)">&quot;./cyberpunk-gaming-controlle=
+r-gamepad-joystick-illustration_691560-5812.avif&quot;</span> <span style=
+=3D"color:rgb(245,150,94)">height</span>=3D<span style=3D"color:rgb(5,169,8=
+5)">&quot;400px&quot;</span> <span style=3D"color:rgb(245,150,94)">width</s=
+pan>=3D<span style=3D"color:rgb(5,169,85)">&quot;300px&quot;</span> <span s=
+tyle=3D"color:rgb(245,150,94)">alt</span>=3D<span style=3D"color:rgb(5,169,=
+85)">&quot;&quot;</span>&gt;</div><div>                    &lt;<span style=
+=3D"color:rgb(255,128,199)">p</span>&gt;Harish Mehta&lt;/<span style=3D"col=
+or:rgb(255,128,199)">p</span>&gt;</div><div>                    &lt;<span s=
+tyle=3D"color:rgb(255,128,199)">p</span>&gt;rank 150&lt;/<span style=3D"col=
+or:rgb(255,128,199)">p</span>&gt;</div><div>        &lt;/<span style=3D"col=
+or:rgb(255,128,199)">div</span>&gt;</div><div>        &lt;<span style=3D"co=
+lor:rgb(255,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">clas=
+s</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;child&quot;</span> <sp=
+an style=3D"color:rgb(245,150,94)">id</span>=3D<span style=3D"color:rgb(5,1=
+69,85)">&quot;child3&quot;</span>&gt;</div><div>                &lt;<span s=
+tyle=3D"color:rgb(255,128,199)">img</span> <span style=3D"color:rgb(245,150=
+,94)">src</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;./cyberpunk-ga=
+ming-controller-gamepad-joystick-illustration_691560-5812.avif&quot;</span>=
+ <span style=3D"color:rgb(245,150,94)">height</span>=3D<span style=3D"color=
+:rgb(5,169,85)">&quot;400px&quot;</span> <span style=3D"color:rgb(245,150,9=
+4)">width</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;300px&quot;</s=
+pan> <span style=3D"color:rgb(245,150,94)">alt</span>=3D<span style=3D"colo=
+r:rgb(5,169,85)">&quot;&quot;</span>&gt;</div><div>                &lt;<spa=
+n style=3D"color:rgb(255,128,199)">p</span>&gt;Harish Mehta&lt;/<span style=
+=3D"color:rgb(255,128,199)">p</span>&gt;</div><div>                &lt;<spa=
+n style=3D"color:rgb(255,128,199)">p</span>&gt;rank 150&lt;/<span style=3D"=
+color:rgb(255,128,199)">p</span>&gt;</div><div>        &lt;/<span style=3D"=
+color:rgb(255,128,199)">div</span>&gt;</div><div>        &lt;<span style=3D=
+"color:rgb(255,128,199)">div</span> <span style=3D"color:rgb(245,150,94)">c=
+lass</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;child&quot;</span> =
+<span style=3D"color:rgb(245,150,94)">id</span>=3D<span style=3D"color:rgb(=
+5,169,85)">&quot;child4&quot;</span>&gt;</div><div>            &lt;<span st=
+yle=3D"color:rgb(255,128,199)">img</span> <span style=3D"color:rgb(245,150,=
+94)">src</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;./cyberpunk-gam=
+ing-controller-gamepad-joystick-illustration_691560-5812.avif&quot;</span> =
+<span style=3D"color:rgb(245,150,94)">height</span>=3D<span style=3D"color:=
+rgb(5,169,85)">&quot;400px&quot;</span> <span style=3D"color:rgb(245,150,94=
+)">width</span>=3D<span style=3D"color:rgb(5,169,85)">&quot;300px&quot;</sp=
+an> <span style=3D"color:rgb(245,150,94)">alt</span>=3D<span style=3D"color=
+:rgb(5,169,85)">&quot;&quot;</span>&gt;</div><div>            &lt;<span sty=
+le=3D"color:rgb(255,128,199)">p</span>&gt;Harish Mehta&lt;/<span style=3D"c=
+olor:rgb(255,128,199)">p</span>&gt;</div><div>            &lt;<span style=
+=3D"color:rgb(255,128,199)">p</span>&gt;rank 150&lt;/<span style=3D"color:r=
+gb(255,128,199)">p</span>&gt;</div><div>        &lt;/<span style=3D"color:r=
+gb(255,128,199)">div</span>&gt;</div><br><div>    &lt;/<span style=3D"color=
+:rgb(255,128,199)">div</span>&gt;</div><div>    </div><div>    </div><div> =
+   &lt;/<span style=3D"color:rgb(255,128,199)">body</span>&gt;</div><div>&l=
+t;/<span style=3D"color:rgb(255,128,199)">html</span>&gt;</div></div></div>=
+<br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Sat=
+, Apr 22, 2023 at 6:22=E2=80=AFPM harsh joshi &lt;<a href=3D"mailto:harsh11=
+01joshi@gmail.com" target=3D"_blank">harsh1101joshi@gmail.com</a>&gt; wrote=
+:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.=
+8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"lt=
+r">hlo<div><br></div></div>
+</blockquote></div>
+</blockquote></div>
+
+--000000000000062aac05f9ec45a1--
